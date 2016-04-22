@@ -5,8 +5,8 @@
 }
 
 @mixin background-gradient($val...) {
-  background: -moz-linear-gradient(top,  $val); /* FF3.6+ */
-  background: -webkit-linear-gradient(top,  $val); /* Chrome10+,Safari5.1+ */
+  background: -moz-linear-gradient(top,  $val);
+  background: -webkit-linear-gradient(top,  $val);
   background: -o-linear-gradient(top,  $val );
   background: -ms-linear-gradient(top,  $val );
   background: linear-gradient(to bottom,  $val );
@@ -51,9 +51,6 @@
 						@include transform(rotateX(0deg));
 					}
 				}
-			// 	.info {
-			// 		opacity: 1;
-			// 	}
 			}
 		}
 
@@ -83,8 +80,6 @@
 			font-size: 12px;
 			line-height: 1.5em;
 			text-shadow: 0 0 2px #000;
-
-			// @include transition(opacity .5s);
 
 			a {
 				text-decoration: none;
