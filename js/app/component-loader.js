@@ -37,7 +37,6 @@ define(['knockout', 'jquery', 'helpers/lib'], function (ko, $, lib) {
 
 		for (var i in customElements) {
 			ko.components.register(customElements[i], { });
-			// flickr.components[customElements[i]] = new lib.Delegate();
 		}
 	}
 
