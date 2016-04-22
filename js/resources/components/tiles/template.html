@@ -1,0 +1,25 @@
+<div class="wrap">
+	<ul data-bind="foreach: tiles, css: {hidden: tiles().length == 0}" class="tiles">
+		<li>
+			<div class="img-preview" data-bind="attr: {style: 'background-image: url(' + getImage() + ');'}, click: function() {  window.open(link, '_blank');}">
+				<div class="info">
+					<a href="" taget="_blank" class="title" data-bind="text: title, attr: {href: link}"></a><a href="" class="author" data-bind="attr: {href: author}">by <span data-bind="text: author"></span></a>
+					<!-- ko if: tags.length > 0 -->
+						<div class="tags">
+							<div class="inner">
+								<ul>
+									<li class="lbl">Tags:</li>
+									<!-- ko foreach: tags -->
+										<li><!-- ko text: (( $index() > 0 ) ? ',' : '') --><!-- /ko --><a href="" target="_blank" data-bind="text: $data, click: $root.fetchFeed.bind($root, true, $data), clickBubble: false"></a></li>
+									<!-- /ko -->
+								</ul>
+							</div>
+						</div>
+					<!-- /ko -->
+				</div>
+			</div>
+		</li>
+	</ul>
+	
+	<div class="hidden" data-bind="css: {hidden: tiles().length > 0 || loading()}">no results found</div>
+</div>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<link rel="stylesheet" href="css/main.css"/>
+	<link rel="stylesheet" href="css/font-awesome/font-awesome.css"/>
+	<title>Flickr Photo Stream</title>
+</head>
+<body>
+	<header>
+		<nav class="row">
+			<ul class="fl">
+				<li><a href="https://www.flickr.com/explore" class="logo">Flickr</a></li>
+			</ul>
+
+			<form action="" class="fr" data-bind="submit: $root.fetchFeed.bind($root, true, $root.search())">
+				<input type="text" name="search" data-bind="value: search" placeholder="Photos, people, or groups"/>
+				<i class="fa fa-search" data-bind="click: $root.fetchFeed.bind($root, true, $root.search()), clickBubble: false"></i>
+			</form>
+		</nav>
+	</header>
+
+	<section id="main">
+		<header>
+			<nav class="row">
+				<ul>
+					<li class="active">Explore</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="row">
+			<h3 data-bind="text: search() ? ('&quot;' + search() + '&quot;') : 'Explore'"></h3>
+			<tiles></tiles>
+		</section>
+
+		<a href="javascript:;" id="go-to-top"><i class="fa fa-arrow-circle-up"></i>
+</a>
+	</section>
+
+	<script type="text/javascript" src="js/lib/require.min.js" data-main="js/app.js"></script>
+</body>
+</html>
